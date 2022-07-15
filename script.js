@@ -1,5 +1,5 @@
 document.onload = function() {
-    if (document.cookie.slice(5) == "true") {
+    if (document.cookie.slice(10) == "true") {
         document.getElementById('flexSwitchCheckDefault').checked = true;
     } else {
         document.getElementById('flexSwitchCheckDefault').checked = false;
