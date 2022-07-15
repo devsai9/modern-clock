@@ -1,5 +1,5 @@
-document.onload = function() {
-    if (document.cookie.slice(10) == "true") {
+function readHrFormatCookie() {
+    if (document.cookie == "hr-format=true") {
         document.getElementById('flexSwitchCheckDefault').checked = true;
     } else {
         document.getElementById('flexSwitchCheckDefault').checked = false;
