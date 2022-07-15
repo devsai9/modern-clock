@@ -99,9 +99,9 @@ function checkTime(i) {
 document.getElementById('flexSwitchCheckDefault').addEventListener('change', function() {
     const today = new Date();
     if (document.getElementById('flexSwitchCheckDefault').checked == true) {
-        document.cookie = "hr-format=true; expires=Fri, 15 July" + " " + (today.getFullYear+1) + " " + "00:00:00 UTC; path=/";
+        document.cookie = "hr-format=true";
     } else {
-        document.cookie = "hr-format=false; expires=Fri, 15 July" + " " + (today.getFullYear+1) + " " + "00:00:00 UTC; path=/";
+        document.cookie = "hr-format=false";
     }
     console.log(document.cookie);
 });
