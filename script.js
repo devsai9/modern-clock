@@ -1,5 +1,5 @@
 function readHrFormatCookie() {
-    if (document.cookie == "hr-format=true;") {
+    if (document.cookie == "hr-format=true") {
         document.getElementById('flexSwitchCheckDefault').checked = true;
         console.log('Checked')
     } else {
