@@ -7,6 +7,8 @@ function readHrFormatCookie() {
     }
 }
 
+readHrFormatCookie();
+
 setInterval(startTime, 0250);
 function startTime() {
     const today = new Date();
