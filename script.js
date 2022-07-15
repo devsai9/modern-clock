@@ -1,5 +1,5 @@
 function readHrFormatCookie() {
-    if (document.cookie == "hr-format=true") {
+    if (document.cookie == "hr-format=true;") {
         document.getElementById('flexSwitchCheckDefault').checked = true;
         console.log('Checked')
     } else {
@@ -97,10 +97,11 @@ function checkTime(i) {
 }
 
 document.getElementById('flexSwitchCheckDefault').addEventListener('change', function() {
+    const today = new Date();
     if (document.getElementById('flexSwitchCheckDefault').checked == true) {
-        document.cookie = "hr-format=true";
+        document.cookie = "hr-format=true; expires=Fri, 15 July" + " " + (today.getFullYear+1) + " " + "00:00:00 UTC; path=/";
     } else {
-        document.cookie = "hr-format=false";
+        document.cookie = "hr-format=false; expires=Fri, 15 July" + " " + (today.getFullYear+1) + " " + "00:00:00 UTC; path=/";
     }
     console.log(document.cookie);
 });
