@@ -13,15 +13,15 @@ setInterval(startTime, 250);
 function startTime() {
     const today = new Date();
     let h = today.getHours();
-    let amOrPm = "am";
+    let amOrPm = "AM";
     if (document.getElementById('flexSwitchCheckDefault').checked == false) {
         if (h > 12) {
             h = h - 12;
         }
         if (h < 12) {
-            amOrPm = "am";
+            amOrPm = "AM";
         } else if (h >= 12) {
-            amOrPm = "pm";
+            amOrPm = "PM";
         }
     }
     let m = today.getMinutes();
@@ -29,7 +29,7 @@ function startTime() {
     m = checkTime(m);
     s = checkTime(s);
     if (document.getElementById('flexSwitchCheckDefault').checked == false) {
-        document.getElementById('time-header').innerHTML = h + ":" + m + ":" + s + amOrPm;
+        document.getElementById('time-header').innerHTML = h + ":" + m + ":" + s + " " + amOrPm;
     } else {
         document.getElementById('time-header').innerHTML = h + ":" + m + ":" + s;
     }
