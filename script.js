@@ -20,7 +20,7 @@ function startTime() {
         } else if (h >= 12) {
             amOrPm = "PM";
         }
-        
+
         if (h > 12) {
             h = h - 12;
         }
@@ -105,6 +105,13 @@ function startTime() {
     document.getElementById('date-header').innerHTML = dayWord + " " + monthWord + " " + today.getDate() + ", " + today.getFullYear();
 
     var timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    for (i = 0; i < timezone.length; i++) {
+        if (timezone[i] == '/') {
+            timezone[i] = ' - ';
+        } else if (timezone[i] == '_') {
+            timezone[i] = " ";
+        }
+    }
     document.getElementById('timezone-header').innerHTML = timezone;
 }
 
