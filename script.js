@@ -15,13 +15,14 @@ function startTime() {
     let h = today.getHours();
     let amOrPm = "AM";
     if (document.getElementById('flexSwitchCheckDefault').checked == false) {
-        if (h > 12) {
-            h = h - 12;
-        }
         if (h < 12) {
             amOrPm = "AM";
         } else if (h >= 12) {
             amOrPm = "PM";
+        }
+        
+        if (h > 12) {
+            h = h - 12;
         }
     }
     let m = today.getMinutes();
