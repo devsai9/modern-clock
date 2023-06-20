@@ -9,7 +9,7 @@ function readHrFormatCookie() {
 
 readHrFormatCookie();
 
-setTimeout(startTime, 250);
+setInterval(startTime, 500);
 function startTime() {
     const today = new Date();
     let h = today.getHours();
@@ -107,7 +107,6 @@ function startTime() {
     var timezone = Intl.DateTimeFormat().resolvedOptions().timeZone.toString();
     timezone = timezone.replace('/', ' - ');
     timezone = timezone.replace('_', ' ');
-    console.log(timezone);
     document.getElementById('timezone-header').innerHTML = timezone;
 }
 
