@@ -104,7 +104,7 @@ function startTime() {
 
     document.getElementById('date-header').innerHTML = dayWord + " " + monthWord + " " + today.getDate() + ", " + today.getFullYear();
 
-    var timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    var timezone = Intl.DateTimeFormat().resolvedOptions().timeZone.toString();
     for (i = 0; i < timezone.length; i++) {
         if (timezone[i] == '/') {
             timezone[i] = ' - ';
