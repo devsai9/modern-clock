@@ -48,3 +48,10 @@ body {
         color: white;
     }
 }
+
+#image-credit {
+    color: white;
+    position: absolute;
+    top: 96.5%;
+    margin-left: 10px;
+}
