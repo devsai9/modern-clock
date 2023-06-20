@@ -13,16 +13,26 @@ setInterval(startTime, 250);
 function startTime() {
     const today = new Date();
     let h = today.getHours();
+    let amOrPm = "am";
     if (document.getElementById('flexSwitchCheckDefault').checked == false) {
         if (h > 12) {
             h = h - 12;
+        }
+        if (h < 12) {
+            amOrPm = "am";
+        } else if (h >= 12) {
+            amOrPm = "pm";
         }
     }
     let m = today.getMinutes();
     let s = today.getSeconds();
     m = checkTime(m);
     s = checkTime(s);
-    document.getElementById('time-header').innerHTML = h + ":" + m + ":" + s;
+    if (document.getElementById('flexSwitchCheckDefault').checked == false) {
+        document.getElementById('time-header').innerHTML = h + ":" + m + ":" + s + amOrPm;
+    } else {
+        document.getElementById('time-header').innerHTML = h + ":" + m + ":" + s;
+    }
 
     var month = today.getMonth() + 1;
     var monthWord;
