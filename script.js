@@ -9,7 +9,7 @@ function readHrFormatCookie() {
 
 readHrFormatCookie();
 
-setInterval(startTime, 250);
+setTimeout(startTime, 250);
 function startTime() {
     const today = new Date();
     let h = today.getHours();
@@ -105,13 +105,9 @@ function startTime() {
     document.getElementById('date-header').innerHTML = dayWord + " " + monthWord + " " + today.getDate() + ", " + today.getFullYear();
 
     var timezone = Intl.DateTimeFormat().resolvedOptions().timeZone.toString();
-    for (i = 0; i < timezone.length; i++) {
-        if (timezone[i] == '/') {
-            timezone[i] = ' - ';
-        } else if (timezone[i] == '_') {
-            timezone[i] = " ";
-        }
-    }
+    timezone = timezone.replace('/', ' - ');
+    timezone = timezone.replace('_', ' ');
+    console.log(timezone);
     document.getElementById('timezone-header').innerHTML = timezone;
 }
 
