@@ -9,7 +9,7 @@ function readHrFormatCookie() {
 
 readHrFormatCookie();
 
-setInterval(startTime, 0250);
+setInterval(startTime, 250);
 function startTime() {
     const today = new Date();
     let h = today.getHours();
@@ -27,40 +27,40 @@ function startTime() {
     var month = today.getMonth() + 1;
     var monthWord;
     switch (month) {
-        case (month == 1):
+        case 1:
             monthWord = "January";
             break;
-        case (month == 2):
+        case 2:
             monthWord = "February";
             break;
-        case (month == 3):
+        case 3:
             monthWord = "March";
             break;
-        case (month == 4):
+        case 4:
             monthWord = "April";
             break;
-        case (month == 5):
+        case 5:
             monthWord = "May";
             break;
-        case (month == 6):
+        case 6:
             monthWord = "June";
             break;
-        case (month == 7):
+        case 7:
             monthWord = "July";
             break;
-        case (month == 8):
+        case 8:
             monthWord = "August";
             break;
-        case (month == 9):
+        case 9:
             monthWord = "September";
             break;
-        case (month == 10):
+        case 10:
             monthWord = "October";
             break;
-        case (month == 11):
+        case 11:
             monthWord = "November";
             break;
-        case (month == 12):
+        case 12:
             monthWord = "December";
             break;
     }
@@ -68,25 +68,25 @@ function startTime() {
     var day = today.getDay();
     var dayWord;
     switch (day) {
-        case (day == 1):
+        case 1:
             dayWord = "Monday";
             break;
-        case (day == 2):
+        case 2:
             dayWord = "Tuesday";
             break;
-        case (day == 3):
+        case 3:
             dayWord = "Wednesday";
             break;
-        case (day == 4):
+        case 4:
             dayWord = "Thursday";
             break;
-        case (day == 5):
+        case 5:
             dayWord = "Friday";
             break;
-        case (day == 6):
+        case 6:
             dayWord = "Saturday";
             break;
-        case (day == 7):
+        case 7:
             dayWord = "Sunday";
             break;
     }
@@ -105,9 +105,9 @@ function checkTime(i) {
 document.getElementById('flexSwitchCheckDefault').addEventListener('change', function() {
     const today = new Date();
     if (document.getElementById('flexSwitchCheckDefault').checked == true) {
-        document.cookie = "hr-format=true; path=/;";
+        document.cookie = "hr-format=true; expires=Thu, 16 July 2122 12:00:00 UTC; path=/;";
     } else {
-        document.cookie = "hr-format=false; path=/;";
+        document.cookie = "hr-format=false; expires=Thu, 16 July 2122 12:00:00 UTC; path=/;";
     }
     console.log(document.cookie);
 });
