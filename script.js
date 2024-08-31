@@ -9,21 +9,19 @@ function readHrFormatCookie() {
 
 readHrFormatCookie();
 
-setInterval(startTime, 500);
+startTime();
+
 function startTime() {
     const today = new Date();
     let h = today.getHours();
     let amOrPm = "AM";
     if (document.getElementById('flexSwitchCheckDefault').checked == false) {
-        if (h < 12) {
-            amOrPm = "AM";
-        } else if (h >= 12) {
-            amOrPm = "PM";
-        }
+        if (h < 12) amOrPm = "AM";
+        else if (h >= 12) amOrPm = "PM";
 
-        if (h > 12) {
-            h = h - 12;
-        }
+        if (h > 12) h = h - 12;
+
+        if (h == 0) h = 12
     }
     let m = today.getMinutes();
     let s = today.getSeconds();
@@ -108,6 +106,9 @@ function startTime() {
     timezone = timezone.replace('/', ' - ');
     timezone = timezone.replace('_', ' ');
     document.getElementById('timezone-header').innerHTML = timezone;
+
+    const nextTick = 1000 - today.getMilliseconds();
+    setTimeout(startTime, nextTick);
 }
 
 function checkTime(i) {

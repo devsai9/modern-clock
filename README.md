@@ -1,4 +1,4 @@
-# Languages Game
+# Modern Clock
 This website is meant to show the user's current time in a clean, clutter-free way. <br> 
 Use: https://devsai9.github.io/modern-clock
 
